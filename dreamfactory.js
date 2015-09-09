@@ -2,7 +2,7 @@
 
 var assert = require('assert');
 
-var uri = 'http://52.20.104.223:80/api/v2/DBTest';
+var uri = 'http://52.7.101.1:80/api/v2/DBTest';
 
 var flow = {
     before: [
