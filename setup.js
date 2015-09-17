@@ -2,8 +2,11 @@ var uri = 'http://10.0.1.236:80/api/v2/DBTest';
 
 var flow = {
     before: [
+    ],
+    beforeMain: [],
+    main: [
         {
-            // Create the test table
+        // Create the test table
 
             post: uri + '/_schema',
             headers: {Accept: 'application/json, text/javascript, */*; q=0.01'},
@@ -38,23 +41,8 @@ var flow = {
             }
         }
     ],
-    beforeMain: [],
-    main: [
-        {
-            // Search for a record
-
-            get: uri + '/_table/test_table?filter=name%3DREAD%20TEST',
-            headers: {Accept: 'application/json, text/javascript, */*; q=0.01'},
-        }
-    ],
     afterMain: [],
     after: [
-        {
-            // Delete the table
-
-            del: uri + '/_schema/test_table',
-            headers: {Accept: 'application/json, text/javascript, */*; q=0.01'}
-        }
     ]
 };
 
